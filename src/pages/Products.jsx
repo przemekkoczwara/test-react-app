@@ -4,6 +4,7 @@ function Products() {
   const [products, setProducts] = useState([]); // punkt 5
   const [loading, setLoading] = useState(true); // punkt 7
   const [error, setError] = useState(false); // punkt 8
+  const [sortBy, setSortBy] = useState('default');
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -18,13 +19,29 @@ function Products() {
       });
   }, []);
 
+  if (loading) return <p>Loading products ... </p>;
+  if (error) return <p>Cannot loading products </p>;
+
+  const sortedProducts = [...products];
+
+  if (sortBy === 'title') {
+    sortedProducts.sort((a, b) => a.title.localeCompare(b.title));
+  } else if (sortBy == 'price') {
+    sortedProducts.sort((a, b) => Number(a.price) - Number(b.price)); 
+  }
+
   // console.log(products);
   // console.log(products[0]);
   return (
     <>
       <h1>Products</h1>
+      <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+        <option value="default">default</option>
+        <option value="title">Title</option>
+        <option value="price">Price</option>
+      </select>
       <ul>
-        {products.map((product) => (
+        {sortedProducts.map((product) => (
           <li key={product.id}>
             <img src={product.image} alt={product.title} width={100} />
             <h3>{product.title}</h3>
