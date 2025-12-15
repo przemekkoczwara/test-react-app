@@ -4,7 +4,7 @@ function Products() {
   const [products, setProducts] = useState([]); // punkt 5
   const [loading, setLoading] = useState(true); // punkt 7
   const [error, setError] = useState(false); // punkt 8
-  const [sortBy, setSortBy] = useState('default');
+  const [sortBy, setSortBy] = useState('default'); // punkt 5b
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -53,10 +53,12 @@ function Products() {
       </ul>
     </>
   );
-  /* a. Przedstaw produkty w formie listy pokazując zdjęcie, tytuł, cenę, kategorię i
+  /*  Punkt 5a. Przedstaw produkty w formie listy pokazując zdjęcie, tytuł, cenę, kategorię i
 ocenę.
-b. Dodaj możliwość sortowania po tytule, cenie lub domyślnie.
+5b. Dodaj możliwość sortowania po tytule, cenie lub domyślnie.  
 
+
+Struktura obiektu:
 [
   {
     "id": 0,
