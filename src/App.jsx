@@ -71,7 +71,7 @@ function App() {
         removeFromBasket={removeFromBasket}
       />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/" element={<Home addToBasket={addToBasket} />}></Route>
         <Route
           path="/products"
           element={<Products addToBasket={addToBasket} />}
