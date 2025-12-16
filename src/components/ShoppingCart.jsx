@@ -4,14 +4,14 @@ function ShoppingCart({ basket }) {
   const totalItems = basket.reduce((total, item) => total + item.count, 0);
 
   return (
-    <div style={{ position: 'fixed', top: 50, right: 50 }}>
+    <div style={{ position: 'fixed', top: 150, right: 150 }}>
       <FaCartArrowDown size={50} />
       {totalItems > 0 && (
         <span
           style={{
             position: 'absolute',
-            top: 10,
-            right: 50,
+            top: '-20px',
+            right: '-15px',
             fontSize: '20px',
             background: 'red',
             width: '25px',

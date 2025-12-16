@@ -5,6 +5,7 @@ import Navbar from './components/Navbar.jsx';
 import ShoppingCart from './components/ShoppingCart.jsx';
 import { useState, useEffect } from 'react';
 import BasketDisplay from './components/BasketDisplay.jsx';
+import './App.css';
 
 function App() {
   // // test basket

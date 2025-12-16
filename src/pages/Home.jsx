@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import '../App.css';
 
 function Home({ addToBasket }) {
   const [randomProduct, SetRandomProduct] = useState(null); // punkt 9
@@ -23,7 +24,7 @@ function Home({ addToBasket }) {
   if (error) return <p>Cannot loading products ! </p>;
 
   return (
-    <>
+    <div className="homeContainer">
       <h1>Product of a day</h1>
       <div>
         <img src={randomProduct.image} alt={randomProduct.title} width={140} />
@@ -33,7 +34,7 @@ function Home({ addToBasket }) {
         <p>Rate:{randomProduct.rating?.rate ?? 'No score'}</p>
         <button onClick={() => addToBasket(randomProduct)}>Add item</button>
       </div>
-    </>
+    </div>
   );
 }
 

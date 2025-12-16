@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
+import '../App.css';
 
-
-function Products({addToBasket}) {
+function Products({ addToBasket }) {
   const [products, setProducts] = useState([]); // punkt 5
   const [loading, setLoading] = useState(true); // punkt 7
   const [error, setError] = useState(false); // punkt 8
@@ -34,7 +34,7 @@ function Products({addToBasket}) {
   // console.log(products);
   // console.log(products[0]);
   return (
-    <>
+    <div className='productsContainer'>
       <h1>Products</h1>
       <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
         <option value="default">default</option>
@@ -43,7 +43,7 @@ function Products({addToBasket}) {
       </select>
       <ul>
         {sortedProducts.map((product) => (
-          <li key={product.id}>
+          <li key={product.id} className='productItem'>
             <img src={product.image} alt={product.title} width={100} />
             <h3>{product.title}</h3>
             <p>Price:{product.price} $</p>
@@ -53,7 +53,7 @@ function Products({addToBasket}) {
           </li>
         ))}
       </ul>
-    </>
+      </div>
   );
   /*  Punkt 5a. Przedstaw produkty w formie listy pokazując zdjęcie, tytuł, cenę, kategorię i
 ocenę.
