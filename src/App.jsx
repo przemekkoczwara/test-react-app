@@ -41,11 +41,28 @@ function App() {
     });
   };
 
+  const removeFromBasket = (productId) => {
+    setBasket((prev) => {
+      const updateBasket = prev.map((item) => {
+        if (item.product.id === productId) {
+          return { ...item, count: item.count - 1 };
+        }
+        return item;
+      });
+      const filteredBasket = updateBasket.filter((item) => item.count > 0);
+      return filteredBasket;
+    });
+  };
+
   return (
     <>
       <Navbar />
       <ShoppingCart basket={basket}></ShoppingCart>
-      <BasketDisplay basket={basket} />
+      <BasketDisplay
+        basket={basket}
+        addTobasket={addToBasket}
+        removeFromBasket={removeFromBasket}
+      />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route
