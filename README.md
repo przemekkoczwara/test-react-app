@@ -1,16 +1,65 @@
-# React + Vite
+# Qualification Exercise – React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Screen Shoot](/src/assets/screen.png)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## React Compiler
+A simple React project demonstrating basic React and React Router skills.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Features:
 
-## Expanding the ESLint configuration
+- **Home** and **Products** pages with navigation
+- Handling invalid routes (404)
+- **Products** page fetches products from [FakeStoreAPI](https://fakestoreapi.com/)
+  - Shows image, title, price, category, and rating
+  - Allows sorting by title, price, or default order
+- **Shopping Cart**
+  - Add and remove products
+  - Cart badge visible on all pages showing item count
+  - Cart state persists after page refresh
+- Shows loading indicator and error message when fetching products
+- Home page displays a random product that can be added to the cart
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Links
+
+- GitHub: [Repository](https://github.com/przemekkoczwara/test-react-app)
+- Live: [GitHub Pages](https://przemekkoczwara.github.io/test-react-app/)
+
+---
+
+## Built With
+
+- React
+- React Router DOM
+- HTML5 & Semantic Markup
+- Basic CSS
+- Fetch API
+
+---
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/przemekkoczwara/test-react-app.git
+
+   ```
+
+2. Install dependencies:
+
+```bash
+   npm install
+
+```
+
+3.Run the app:
+
+```bash
+   npm  run dev
+
+```

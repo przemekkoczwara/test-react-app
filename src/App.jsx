@@ -74,6 +74,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home addToBasket={addToBasket} />}></Route>
         <Route
+          path="/home"
+          element={<Home addToBasket={addToBasket} />}
+        ></Route>
+        <Route
           path="/products"
           element={<Products addToBasket={addToBasket} />}
         ></Route>
