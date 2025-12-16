@@ -4,7 +4,7 @@ function ShoppingCart({ basket }) {
   const totalItems = basket.reduce((total, item) => total + item.count, 0);
 
   return (
-    <div style={{ position: 'fixed', top: 50, left: 400 }}>
+    <div style={{ position: 'fixed', top: 50, right: 50 }}>
       <FaCartArrowDown size={50} />
       {totalItems > 0 && (
         <span

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
-function Products() {
+
+function Products({addToBasket}) {
   const [products, setProducts] = useState([]); // punkt 5
   const [loading, setLoading] = useState(true); // punkt 7
   const [error, setError] = useState(false); // punkt 8
@@ -27,7 +28,7 @@ function Products() {
   if (sortBy === 'title') {
     sortedProducts.sort((a, b) => a.title.localeCompare(b.title));
   } else if (sortBy == 'price') {
-    sortedProducts.sort((a, b) => Number(a.price) - Number(b.price)); 
+    sortedProducts.sort((a, b) => Number(a.price) - Number(b.price));
   }
 
   // console.log(products);
@@ -48,6 +49,7 @@ function Products() {
             <p>Price:{product.price} $</p>
             <p>Category:{product.category}</p>
             <p>Rate:{product.rating?.rate ?? 'No score'}</p>
+            <button onClick={() => addToBasket(product)}>Add item</button>
           </li>
         ))}
       </ul>
